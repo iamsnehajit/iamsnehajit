@@ -6,19 +6,19 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link uppercase blue bold" href="#">Home</a>
+        <a class="nav-link uppercase blue bold" href="index.php">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link uppercase blue bold" href="about.php">about</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link uppercase blue bold" href="#">Activity</a>
+        <a class="nav-link uppercase blue bold" href="activity.php">Activity</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link uppercase blue bold" href="#">board of directors</a>
+        <a class="nav-link uppercase blue bold" href="board.php">board of directors</a>
       </li>
 	<li class="nav-item">
-        <a class="nav-link uppercase blue bold" href="#">officers & staff</a>
+        <a class="nav-link uppercase blue bold" href="staff.php">officers & staff</a>
       </li>
 	<li class="nav-item">
         <a class="nav-link uppercase blue bold" href="#">news</a>

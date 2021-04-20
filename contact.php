@@ -53,7 +53,7 @@
 </div>
 	<div class="container-fluid p-0">
 		<div class="map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.9953858666736!2d88.30251921496037!3d22.616647485160144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882a1fea95bc7%3A0x483af55688cc6464!2sKona%20High%20School!5e0!3m2!1sen!2sin!4v1618157029453!5m2!1sen!2sin" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14731.27953295628!2d88.28719173002727!3d22.6232002625066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882900caffbc9%3A0xdb057b99ad9302c4!2sKhaliya%2C%20Howrah%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1618892984199!5m2!1sen!2sin" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 		</div>
 	</div>
 

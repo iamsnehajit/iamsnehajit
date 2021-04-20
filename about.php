@@ -20,80 +20,25 @@
 	<!--======Our vission=======---->
 	<div class="container p-0">
 		<div class="our-vision">
-			
+			<div class=" ">
+				<h3 class="large-txt uppercase bold text-center">Our Vision</h3>
+				<h4 class="big-txt">PBanibon Jagadishpur S.K.U.S. Ltd.“Vision – 2020”</h4>
+						<ul class="ul-none">
+							<li><a href="javascript:void(0)">To  set up Mini Rice Mill (already sanctioned by Agricultural Marketing Department  for Rs. of which 50%  is  Government Grant).</a></li>
+							<li><a href="javascript:void(0)">To introduce custom Hiring Center (Agril. Hub) by Agriculture Department.</a></li>
+							<li><a href="javascript:void(0)">To start whole sale business–AMUL Milk Product.</a></li>
+							<li><a href="javascript:void(0)">To set up IFFCO Buffer Godown .</a></li>
+							<li><a href="javascript:void(0)">To open new branch at Panpur More near N.H. 6.</a></li>
+							<li><a href="">To increase no of SHG and proper nourishing with adoption of Sajani Model.</a></li>
+							<li><a href="javascript:void(0)">To set up a work shed for SHG.</a></li>
+							<li><a href="javascript:void(0)">To open retail counter for SHG product with the help of Cooperation Directorate.</a></li>
+                            <li><a href="javascript:void(0)">The society has taken a Master Plan to increase the Membership.</a></li>
+						</ul>
+				</div>
 		</div>
 	</div>
 	
-	<!--=======table area=========--->
-	<div class="container p-0">
-		<div class="about-table text-center">
-			<h2 class="large-txt uppercase bold">Contact Details</h2>
-			<div class="main-table">
-				<table class="table">
-	  <thead class="bg-blue">
-	    <tr>
-	      <th scope="col" class="white">#</th>
-	      <th scope="col" class="white">First</th>
-	      <th scope="col" class="white">Last</th>
-	      <th scope="col" class="white">Handle</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <th scope="row">1</th>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <td>Jacob</td>
-	      <td>Thornton</td>
-	      <td>@fat</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">3</th>
-	      <td>Larry</td>
-	      <td>the Bird</td>
-	      <td>@twitter</td>
-	    </tr>
-	  </tbody>
-	</table>
-
-	<table class="table">
-	  <thead class="thead-light">
-	    <tr>
-	      <th scope="col">#</th>
-	      <th scope="col">First</th>
-	      <th scope="col">Last</th>
-	      <th scope="col">Handle</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <th scope="row">1</th>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <td>Jacob</td>
-	      <td>Thornton</td>
-	      <td>@fat</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">3</th>
-	      <td>Larry</td>
-	      <td>the Bird</td>
-	      <td>@twitter</td>
-	    </tr>
-	  </tbody>
-	</table>
-			</div>
-		</div>
-	</div>
-
+	
 	<!--=========faq section=======---->
 	<div class="container">
     <div id="accordion" class="accordion">

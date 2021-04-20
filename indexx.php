@@ -2,7 +2,15 @@
 <html>
 <head>
 	<title>Jagadishpur Co-operative Credit Society Limited</title>
-	<?php include ('header-include.php'); ?>
+			<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<link href="css/custom.css" rel="stylesheet"/>
+		<link href="css/responsive.css" rel="stylesheet"/>
 </head>
 <body>
 	<div class="container-fluid p-0">
@@ -14,7 +22,37 @@
 			</div>
       		</div>
 	</div>
-	<?php include ('header.php'); ?>
+	<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#"><img src="images/nav-logo.png" alt="Logo"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link uppercase blue bold" href="index.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link uppercase blue bold" href="about.php">about</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link uppercase blue bold" href="activity.php">Activity</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link uppercase blue bold" href="board.php">board of directors</a>
+      </li>
+	<li class="nav-item">
+        <a class="nav-link uppercase blue bold" href="staff.php">officers & staff</a>
+      </li>
+	<li class="nav-item">
+        <a class="nav-link uppercase blue bold" href="#">news</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link uppercase blue bold" href="contact.php">contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 	<!------==============Banner===========------------>
 	<div class="container-fluid p-0">
 		<div class="index-banner">
@@ -26,16 +64,13 @@
   			</ol>
   			<div class="carousel-inner">
     			<div class="carousel-item active">
-      			<img class="d-block w-100" src="images/naf.jpg" alt="First slide">
+      			<img class="d-block w-100" src="images/b1.jpg" alt="First slide">
     			</div>
     			<div class="carousel-item">
       			<img class="d-block w-100" src="images/2.jpg" alt="Second slide">
       			
     			</div>
-			<div class="carousel-item">
-      			<img class="d-block w-100" src="images/1.jpg" alt="Second slide">
-      			
-    			</div>
+			
     			<div class="carousel-item">
       			<img class="d-block w-100" src="images/8.jpg" alt="Third slide">
       			
@@ -89,9 +124,6 @@
 			    </div>
 			    <div class="item">
 			    	<img src="images/ajjkal.jpg" alt="image"/>
-			    </div>
-			    <div class="item">
-			    	<img src="images/ajj-kal-three.jpg" alt="image"/>
 			    </div>
 			    <div class="item">
 			    	<img src="images/ajj-kal-two.jpg" alt="image"/>

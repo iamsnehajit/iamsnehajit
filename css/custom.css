@@ -42,7 +42,7 @@ a:hover{text-decoration: none;}
 .act-ruls h5{text-align: center; margin-bottom: 50px;}
 .act-rul-each a{padding: 20px 40px; display: inline-block; color: #fff !important; background-image: linear-gradient(#0066ff, #000066); width: 200px; margin: 0 0 50px 0; transition: 0.4s;}
 .act-rul-each a:hover{ margin-left: 20px;}
-.banner-head{margin: 0;padding: 25px 10px 25px 50px;  background: linear-gradient(-45deg, rgba(0, 0, 0, -0.2), rgba(0, 0, 0, .8)) fixed, url('../images/green-two.jpg') fixed;
+.banner-head{margin: 0;padding: 25px 10px 25px 50px;  background: linear-gradient(-45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, .9)) fixed, url('../images/green-two.jpg') fixed;
  background-size: cover;}
 .banner-head h1{text-shadow: 0 0 3px #cce6ff;}
 .fix-social{position: fixed; top: 20%; left: 0; background-color: #000066; padding:10px;}
@@ -100,6 +100,11 @@ hr{background-color: #fff;}
 /************=====sign-up-frm=====**********/
 .sing-up{position: relative;}
 .sign-up-frm{border: 2px solid #000066 !important; padding: 50px;  width: 600px; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+/************====Activity=======************/
+.about-section ul li{ margin-left: 20px; }
+.about-section ul li .fa{ margin-right: 10px; }
+.about-content{margin: 70px 0;}
+.about-section h2{margin-bottom: 50px;}
 /************=====block ui======***********/
 .blockUI.blockMsg.blockPage{ border: 2px solid #000066 !important; padding: 50px !important;  width: 600px !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%);}
 .blockUI .block-ui-input{width: 79%; margin: 0 10%; display: block; height: 50px; padding: 15px;}
@@ -107,3 +112,4 @@ hr{background-color: #fff;}
 .blockUI label{font-size: 20px !important;}
 .blockUI h2{margin-bottom: 50px;}
 .block-xtra a{display: block; margin: 10px auto;}
+.bye-laws img{display: block;}

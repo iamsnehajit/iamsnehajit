@@ -116,3 +116,6 @@ hr{background-color: #fff;}
 .blockUI h2{margin-bottom: 50px;}
 .block-xtra a{display: block; margin: 10px auto;}
 .bye-laws img{display: block;}
+.bye-laws{margin: 50px auto; text-align: center; border: 5px solid #000; padding: 25px;}
+.bye-laws img{text-align: center; margin: 15px auto;}
+.gal-index-img{padding: 15px 0;}

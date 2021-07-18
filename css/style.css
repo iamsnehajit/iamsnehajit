@@ -379,6 +379,7 @@ a:focus {
     .hero {
         padding-top: 60px;
         padding-bottom: 60px;
+        height: auto;
     }
     
     .hero,
@@ -405,6 +406,7 @@ a:focus {
         padding: 10px 15px;
         letter-spacing: 1px;
     }
+    
 }
 
 @media (max-width: 575.98px) {
@@ -425,6 +427,7 @@ a:focus {
         padding: 8px 10px;
         letter-spacing: 0;
     }
+
 }
 
 
@@ -619,6 +622,8 @@ a:focus {
     .about .about-content {
         padding: 45px 15px 0 15px;
     }
+    figure {margin: 0 auto;width: 70%;}
+    .swing {float: none;}
 }
 
 
@@ -1667,4 +1672,8 @@ a:focus {
         line-height: 16px;
         padding: 0 5px;
     }
+}
+
+@media (max-width: 767.98px) {
+    .s-logo img {width: 80px;}
 }

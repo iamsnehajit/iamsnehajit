@@ -16,7 +16,7 @@ h3,
 h4,
 h5, 
 h6 {
-    color: #414141;
+    color: #040BFC;
 }
 
 a {
@@ -27,7 +27,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #EF233C;
+    color: #040BFC;
     outline: none;
     text-decoration: none;
 }
@@ -47,20 +47,20 @@ a:focus {
     font-weight: 600;
     letter-spacing: 1px;
     color: #ffffff;
-    background: #EF233C;
+    background: #040BFC;
     border: 2px solid transparent;
     border-radius: 0;
-    box-shadow: inset 0 0 0 50px #EF233C;
+    box-shadow: inset 0 0 0 50px #040BFC;
     transition: ease-out 0.3s;
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
 }
 
 .btn:hover {
-    color: #EF233C;
+    color: #040BFC;
     background: transparent;
-    box-shadow: inset 0 0 0 0 #EF233C;
-    border-color: #EF233C;
+    box-shadow: inset 0 0 0 0 #040BFC;
+    border-color: #040BFC;
 }
 
 #loader {
@@ -94,7 +94,7 @@ a:focus {
     width: 45px;
     height: 45px;
     border: 5px solid #dddddd;
-    border-top: 5px solid #EF233C;
+    border-top: 5px solid #040BFC;
     border-radius: 50%;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
@@ -191,7 +191,7 @@ a:focus {
     }
     
     .navbar.nav-sticky .navbar-brand {
-        color: #EF233C;
+        color: #040BFC;
     }
 
     .navbar-light .navbar-nav .nav-link,
@@ -214,7 +214,7 @@ a:focus {
     
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
     .navbar-light.nav-sticky .navbar-nav .nav-link.active {
-        color: #EF233C;
+        color: #040BFC;
     }
 }
 
@@ -225,7 +225,7 @@ a:focus {
     }
     
     .navbar .navbar-brand {
-        color: #EF233C;
+        color: #040BFC;
     }
     
     .navbar .navbar-nav {
@@ -252,7 +252,7 @@ a:focus {
     padding: 120px 0 0 0;
     overflow: hidden;
     height: 100vh;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #ee7752, #040BFC, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 }
@@ -331,7 +331,7 @@ a:focus {
 
 .hero .hero-btn .btn {
     margin-top: 35px;
-    color: #EF233C;
+    color: #040BFC;
     background: #ffffff;
     box-shadow: inset 0 0 0 50px #ffffff;
 }
@@ -448,8 +448,10 @@ a:focus {
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     background: #ffffff;
+    color: #04B1FC;
+    font-style: italic;
 }
 
 .section-header p::before {
@@ -459,20 +461,11 @@ a:focus {
     top: 11px;
     right: 0;
     left: -30px;
-    background: #EF233C;
+    background: #04B1FC;
     z-index: -1;
 }
 
-.section-header p::after {
-    position: absolute;
-    content: "";
-    width: 3px;
-    height: 3px;
-    top: 11px;
-    left: 3px;
-    background: #EF233C;
-    z-index: 1;
-}
+
 
 .section-header h2 {
     margin: 0;
@@ -552,7 +545,7 @@ a:focus {
 
 .about .progress .progress-bar {
     width: 0px;
-    background: #EF233C;
+    background: #040BFC;
     border-radius: 10px;
     transition: 2s;
 }
@@ -644,7 +637,7 @@ a:focus {
     content: '';
     position: absolute;
     width: 2px;
-    background: #EF233C;
+    background: #040BFC;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -676,7 +669,7 @@ a:focus {
     top: 48px;
     right: -8px;
     background: #ffffff;
-    border: 2px solid #EF233C;
+    border: 2px solid #040BFC;
     border-radius: 16px;
     z-index: 1;
 }
@@ -708,7 +701,7 @@ a:focus {
     top: 44px;
     font-size: 16px;
     font-weight: 600;
-    color: #EF233C;
+    color: #040BFC;
     text-transform: uppercase;
     letter-spacing: 1px;
     z-index: 1;
@@ -822,7 +815,7 @@ a:focus {
 }
 
 .service .service-item:hover {
-    box-shadow: inset 800px 0 0 0 #EF233C;
+    box-shadow: inset 800px 0 0 0 #040BFC;
 }
 
 .service .service-icon {
@@ -832,14 +825,14 @@ a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #EF233C;
+    border: 1px solid #040BFC;
     background: #ffffff;
 }
 
 .service .service-icon i {
     position: relative;
     font-size: 60px;
-    color: #EF233C;
+    color: #040BFC;
     transition: .3s;
 }
 
@@ -907,10 +900,10 @@ a:focus {
     font-size: 14px;
     font-weight: 600;
     color: #ffffff;
-    background: #EF233C;
+    background: #040BFC;
     border: 2px solid transparent;
     border-radius: 0;
-    box-shadow: inset 0 0 0 50px #EF233C;
+    box-shadow: inset 0 0 0 50px #040BFC;
     transition: ease-out 0.3s;
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
@@ -918,10 +911,10 @@ a:focus {
 
 .portfolio #portfolio-filter li:hover,
 .portfolio #portfolio-filter li.filter-active {
-    color: #EF233C;
+    color: #040BFC;
     background: transparent;
-    box-shadow: inset 0 0 0 0 #EF233C;
-    border-color: #EF233C;
+    box-shadow: inset 0 0 0 0 #040BFC;
+    border-color: #040BFC;
 }
 
 .portfolio .portfolio-item {
@@ -983,10 +976,10 @@ a:focus {
 }
 
 .portfolio .portfolio-item:hover a.btn {
-    color: #EF233C;
+    color: #040BFC;
     background: transparent;
-    box-shadow: inset 0 0 0 0 #EF233C;
-    border-color: #EF233C;
+    box-shadow: inset 0 0 0 0 #040BFC;
+    border-color: #040BFC;
 }
 
 
@@ -998,7 +991,7 @@ a:focus {
     width: 100%;
     margin: 45px 0;
     padding: 90px 0;
-    background: #EF233C;
+    background: #040BFC;
 }
 
 .banner .container {
@@ -1035,7 +1028,7 @@ a:focus {
 
 .banner .banner-text .btn {
     margin-top: 15px;
-    color: #EF233C;
+    color: #040BFC;
     background: #ffffff;
     box-shadow: inset 0 0 0 50px #ffffff;
 }
@@ -1089,7 +1082,7 @@ a:focus {
 }
 
 .price .price-item.featured-item .price-header {
-    color: #EF233C;
+    color: #040BFC;
 }
 
 .price .price-title h2 {
@@ -1119,7 +1112,7 @@ a:focus {
 }
 
 .price .price-item.featured-item h2 {
-    color: #EF233C;
+    color: #040BFC;
 }
 
 .price .price-body {
@@ -1155,15 +1148,15 @@ a:focus {
 
 .price .price-item.featured-item .price-action .btn {
     color: #ffffff;
-    background: #EF233C;
-    box-shadow: inset 0 0 0 50px #EF233C;
+    background: #040BFC;
+    box-shadow: inset 0 0 0 50px #040BFC;
 }
 
 .price .price-item.featured-item .price-action .btn:hover {
-    color: #EF233C;
+    color: #040BFC;
     background: transparent;
-    box-shadow: inset 0 0 0 0 #EF233C;
-    border-color: #EF233C;
+    box-shadow: inset 0 0 0 0 #040BFC;
+    border-color: #040BFC;
 }
 
 
@@ -1206,7 +1199,7 @@ a:focus {
 }
 
 .team .team-text h2 {
-    color: #EF233C;
+    color: #040BFC;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 5px;
@@ -1245,7 +1238,7 @@ a:focus {
 }
 
 .team .team-item:hover {
-    box-shadow: inset 800px 0 0 0 #EF233C;
+    box-shadow: inset 800px 0 0 0 #040BFC;
 }
 
 .team .team-item:hover .team-img img {
@@ -1295,7 +1288,7 @@ a:focus {
     position: relative;
     margin: 45px 0;
     padding: 90px 0;
-    background: #EF233C;
+    background: #040BFC;
 }
 
 .testimonial .container {
@@ -1351,7 +1344,7 @@ a:focus {
 }
 
 .testimonial .testimonial-text h3 {
-    color: #EF233C;
+    color: #040BFC;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -1402,30 +1395,30 @@ a:focus {
 }
 
 .contact .contact-form input {
-    color: #EF233C;
+    color: #040BFC;
     padding: 15px 0;
     background: none;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid #EF233C;
+    border-bottom: 1px solid #040BFC;
 }
 
 .contact .contact-form textarea {
-    color: #EF233C;
+    color: #040BFC;
     height: 90px;
     padding: 15px 0;
     background: none;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid #EF233C;
+    border-bottom: 1px solid #040BFC;
 }
 
 .contact .contact-form .form-control::placeholder {
-    color: #EF233C;
+    color: #040BFC;
     opacity: 1;
 }
 .contact-frm-left{height: 100%; display: flex; justify-content: center; align-items: center;}
-.contact-frm-left h2{font-size: 60px; color: #EF233C;}
+.contact-frm-left h2{font-size: 60px; color: #040BFC;}
 
 .contact .contact-form .form-control:-ms-input-placeholder,
 .contact .contact-form .form-control::-ms-input-placeholder {
@@ -1434,17 +1427,17 @@ a:focus {
 
 .contact .contact-form .btn {
     margin-top: 35px;
-    color: #EF233C;
+    color: #040BFC;
     background: #ffffff;
     box-shadow: inset 0 0 0 50px #ffffff;
-    border-color: #EF233C;
+    border-color: #040BFC;
 }
 
 .contact .contact-form .btn:hover {
     color: #ffffff;
-    background: #EF233C;
+    background: #040BFC;
     box-shadow: inset 0 0 0 0 #ffffff;
-    border-color: #EF233C;
+    border-color: #040BFC;
 }
 
 .contact .help-block ul {
@@ -1549,7 +1542,7 @@ a:focus {
 .footer {
     position: relative;
     margin-top: 45px;
-    background: #EF233C;
+    background: #040BFC;
 }
 
 .footer .container-fluid {
@@ -1673,6 +1666,8 @@ a:focus {
         padding: 0 5px;
     }
 }
+
+
 
 @media (max-width: 767.98px) {
     .s-logo img {width: 80px;}

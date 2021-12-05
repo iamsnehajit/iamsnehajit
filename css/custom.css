@@ -503,8 +503,8 @@ section#counter-stats {
   border: none;
   background: #000;
   height: 3px;
-  width: 96%;
-  margin-left: 8px;
+  width: 70%;
+  margin-left: 5px;
 }
 .price-range-slider .range-bar .ui-slider-range {
   background: #06b9c0;

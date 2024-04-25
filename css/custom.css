@@ -44,12 +44,12 @@ body{background: #0E0E0E;}
 .common-txt{font-size: 16px; color: rgba(255,255,255,0.5);}
 .lite{font-weight:  300;}
 .big-header{font-size: 100px !important;}
-.flex-div{display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100vh;}
+.flex-div{display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; padding: 50px 0;}
 .line2{line-height: 1.2;}
 .red{color: #FF0000;}
-.flex-div-one{position: absolute; top: 50%; transform:  translateY(-50%); z-index:  2;}
+.flex-div-one{z-index:  2; position: relative; padding: 80px 0;}
 .gray{color: rgba(255, 255, 255, 0.5);}
-.w-80{width: 80%;}
+.w-80{width: 100%;}
 .bg-img{background-position: center; background-size: cover; background-repeat: no-repeat;}
 /*body*/
 
@@ -136,8 +136,8 @@ body{background: #0E0E0E;}
 .social-media{position: absolute; top: 30%; left: 50px; z-index: 999; width: 50px;}
 .social-media a{display: block; margin-bottom: 15px;}
 .common-section{position: relative; height: 100vh; overflow: hidden;}
-.common-section.not-banner:after{content: ''; position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1; background: rgba(0,0,0,0.5);}
-.data-section{z-index: 2; position: relative;}
+/*.common-section:after{content: ''; position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1; background: rgba(0,0,0,0.5);}*/
+.data-section,.section-one-left,.section-one-right{z-index: 2; position: relative;}
 .background-txt h1{font-size: 200px; color: rgba(255,255,255,0.1); position: absolute; left: 50%; transform: translateX(-50%); text-align: center; top: 10vh; z-index: 1;}
 .section-one-left{margin-top: 35vh;}
 .quotation-icon{float: left; min-height: 150px;}
@@ -149,21 +149,25 @@ body{background: #0E0E0E;}
 .quotation-detals p span img{position: absolute; bottom:-35px;}
 .introduction p{width: 500px; margin-top: 20px;}
 .common-section video{width: 100%; height: 100vh; object-fit: cover;}
-.not-banner h2{font-size: 200px; color: rgba(255,255,255,0.1); position: absolute; left: 50%; transform: translateX(-50%); text-align: center; top: 5vh; z-index: 1; width: 100%;}
+/*.not-banner h2{font-size: 200px; color: rgba(255,255,255,0.1); position: absolute; left: 50%; transform: translateX(-50%); text-align: center; top: 5vh; z-index: 1; width: 100%;}*/
 .information{position: absolute; bottom: 200px; width: 600px; line-height: 1.2;}
 .full-width{left: auto; right: auto; width: 80%;}
-.flex-div-one p{max-width:  75%;}
+/*.flex-div-one p{max-width:  75%;}
 .flex-div-one h3{max-width: 60%;}
-.flex-div-one h4{max-width: 75%;}
+.flex-div-one h4{max-width: 75%;}*/
 .mobile-point{position: absolute; top: 65%; left: 15%; z-index: 9;}
 .mobile-point p{position: absolute; left: 105%; bottom: -35px;}
 .laptop-point{position: absolute; top: 70%; right: 30%; z-index: 9;}
 .laptop-point p{position: absolute; left: -50%; bottom: -35px;}
-.lets-talk{margin-top:  100px;}
-.lets-talk h2{font-size: 60px; position: relative; top: auto; left: auto; text-align: left; transform: translate(0,0);}
-.lets-talk-div{position: absolute; left:0; top: 0; width: 100%; height: 100%;}
+.lets-talk{margin:  50px 0;}
+.lets-talk h2{font-size: 60px; position: relative; top: auto; left: auto; text-align: left; color:  #fff;}
+.lets-talk-div{width: 100%; height: 100%;}
 .xtra-bigtext{font-size: 90px; margin-top: 70px;}
-.coronal-heading{margin-bottom: 80px;}
+.coronal-heading{margin-bottom: 20px;}
+.flex-div-absolute{position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 50%;}
+.flex-div-absolute2{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 2; width: 1200px; text-align: center;}
+
+section.not-bg{height: auto;}
 
 /*  responsive  */
 @media(max-width: 1440px){

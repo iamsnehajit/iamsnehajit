@@ -167,7 +167,7 @@ body{background: #0E0E0E;}
 .flex-div-absolute{position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 50%;}
 .flex-div-absolute2{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 2; width: 1200px; text-align: center;}
 
-section.not-bg{height: auto;}
+section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direction: column;}
 
 /*  responsive  */
 @media(max-width: 1440px){

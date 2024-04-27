@@ -380,20 +380,20 @@
 	});
 	gsap.registerPlugin(ScrollTrigger)
 
-	var sections = gsap.utils.toArray('section');
+	// var sections = gsap.utils.toArray('section');
 
-		sections.forEach((section) => {
+	// 	sections.forEach((section) => {
 		
-		gsap.to(section, { autoAlpha: 0,
-			scrollTrigger: {
-				trigger: section,
-				start: 'top top+=100',
-				scrub: true,
-				end: '+=500',
-				markers: true
-			}
-		});
+	// 	gsap.to(section, { autoAlpha: 0,
+	// 		scrollTrigger: {
+	// 			trigger: section,
+	// 			start: 'top top+=100',
+	// 			scrub: true,
+	// 			end: '+=500',
+	// 			markers: true
+	// 		}
+	// 	});
 	
-	})
+	// })
 </script>
 </html>

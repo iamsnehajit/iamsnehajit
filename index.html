@@ -7,6 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<style>
+		section{
+			opacity: 0;
+		}
+	</style>
 </head>
 <body>
 
@@ -398,25 +403,24 @@
 	});
 	gsap.registerPlugin(ScrollTrigger)
 
-	// var sections = gsap.utils.toArray('section');
-
-	// 	sections.forEach((section) => {
-		
-	// 	gsap.to(section, { autoAlpha: 0,
-	// 		scrollTrigger: {
-	// 			trigger: section,
-	// 			start: 'top top+=100',
-	// 			scrub: true,
-	// 			end: '+=500',
-	// 			markers: true
-	// 		}
-	// 	});
-	
-	// })
+	var sections = gsap.utils.toArray('section');	
+	sections.forEach((section) => {
+		gsap.to(section, { 
+			// autoAlpha: 0,
+			opacity: 1,
+			scrollTrigger: {
+				trigger: section,
+				start: 'top-=100 top+=100',
+				scrub: true,
+				end: '+=700',
+				markers: true
+			}
+		});
+	})
 </script>
 
 <!-- wow js -->
-<script>
+<!-- <script>
 	(function() {
   var Util,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
@@ -611,5 +615,5 @@ wow = new WOW(
 );
 wow.init();
 
-</script>
+</script> -->
 </html>

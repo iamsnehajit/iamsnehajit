@@ -26,7 +26,8 @@
 *{border: none; outline: none; box-sizing: border-box;}
 a{text-decoration: none; transition: 0.4s;}
 button{transition: 0.4s;}
-body{background: #0E0E0E;}
+/* body{background: #0E0E0E;} */
+body{background: #000000;}
 .wrapper{overflow: hidden;}
 
 /*common css*/
@@ -148,7 +149,7 @@ body{background: #0E0E0E;}
 .quotation-detals p{position: relative; padding-top: 20px; line-height: 1.2;}
 .quotation-detals p span img{position: absolute; bottom:-35px;}
 .introduction p{width: 500px; margin-top: 20px;}
-.common-section video{width: 100%; height: 100vh; object-fit: cover;}
+.common-section video{width: 90%; height: 100vh; }
 /*.not-banner h2{font-size: 200px; color: rgba(255,255,255,0.1); position: absolute; left: 50%; transform: translateX(-50%); text-align: center; top: 5vh; z-index: 1; width: 100%;}*/
 .information{position: absolute; bottom: 200px; width: 600px; line-height: 1.2;}
 .full-width{left: auto; right: auto; width: 80%;}
@@ -212,4 +213,10 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
     .quotation-icon img, .quotation-detals p span img{width: 20px;}
     .header-two {font-size: 25px;}
     .introduction p{width: 100%;}
+}
+
+
+.container-fluid{
+  display: flex;
+  justify-content: center !important;
 }

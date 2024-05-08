@@ -170,6 +170,13 @@ body{background: #000000;}
 
 section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direction: column;}
 
+/*youtube video*/
+.popup-video{transition: 0.4s;position: fixed; top: -150vh; left: 0; width: 100%; height: 100vh; background: rgba(0, 0, 0, 1); z-index: 999999; text-align: center;}
+.popup-video.open{top: 0;}
+.popup-video iframe{width: 85%; height: 80vh; margin-top:5vh;} 
+.pause-btn{position: absolute; top: 0px; right: 20px; font-size: 50px; color: #fff;}
+.pause-btn a img{max-width: 35px;}
+.play-video{position: fixed; top: 50%; right: 20px; z-index: 99;}
 /*  responsive  */
 @media(max-width: 1440px){
    .background-txt h1 {font-size: 175px;}

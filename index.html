@@ -13,7 +13,7 @@
 		}
 	</style>
 </head>
-<body>
+<body onLoad="controlVideo('playVideo');">
 <div class="blender"></div>
 	<div class="wrapper">
 	<!-- menu -->
@@ -40,11 +40,11 @@
 	<!-- youtube -->
 	<div class="popup-video" id="popup-video">
 		<div id="thevideo">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/fmuUQCB3pAE?rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/SMpLAcwwL7c?si=Dcao3xmHRbffwkE8?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		</div>
 		<div class="pause-btn"><a href="javascript:void(0)" id="pause" onClick="controlVideo('pauseVideo');">&times</a></div>
 	</div>
-	<div class="play-video d-none" id="play-video"><a href="javascript:void(0)" onClick="controlVideo('playVideo');">Play Video</a></div>
+	<div class="play-video d-none" id="play-video"><a href="javascript:void(0)" id="play-video-btn" onClick="controlVideo('playVideo');">Play Video</a></div>
 		<!-- <div><a href="javascript:void(0)" onClick="controlVideo('stopVideo');">Stop Video</a></div> -->
 					
 
@@ -458,9 +458,10 @@
 
 	window.onload = function () {
             setTimeout(function () {
-                var videosection2 = document.getElementById("popup-video");
+                var playvideo = document.getElementById("play-video-btn");
                 var play = document.getElementById("play-video");
-   				videosection2.classList.toggle("open");
+   				var videosectionn = document.getElementById("popup-video");
+   				videosectionn.classList.toggle("open");
    				play.classList.toggle("d-none");
             }, 3000); // Delay of 5 seconds
         };

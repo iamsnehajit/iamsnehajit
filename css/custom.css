@@ -177,6 +177,10 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
 .pause-btn{position: absolute; top: 0px; right: 20px; font-size: 50px; color: #fff;}
 .pause-btn a img{max-width: 35px;}
 .play-video{position: fixed; top: 50%; right: 20px; z-index: 99;}
+.play-btn{color: #000; background: #fff; border: 1px solid #fff; padding: 10px 25px; transition: 0.4s; border-radius: 30px;}
+.play-btn:hover{color: #fff; background: #000; border: 1px solid #fff;}
+.pause-btn a{color: rgba(255, 255, 255, 0.8);}
+.pause-btn a:hover;{color: rgba(255, 255, 255, 1);}
 /*  responsive  */
 @media(max-width: 1440px){
    .background-txt h1 {font-size: 175px;}
@@ -184,7 +188,15 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
 @media(max-width: 1199px){
     .flex-div-one h3{max-width: 100%;}
     .header-five, .lets-talk h2 {font-size: 50px;}
-    .background-txt h1 {font-size: 125px;}
+    .background-txt h1 {font-size: 100px;}
+    .common-section {height: 100%; padding: 30px 0;}
+    .information{position: relative; top: auto; left: auto; padding: 35px 0px 15px; max-width: 500px; bottom: auto;}
+    .common-section video {width: 100%;}
+    section.not-bg {height: auto; padding: 30px 0;}
+    .flex-div-absolute2,.flex-div-absolute{position: relative; top: auto; left: auto; padding: 35px 0px 15px; bottom: auto; transform: translate(0,0); width: 100%;} 
+    .flex-div-absolute .mt-5 {margin-top: 0rem !important;}
+    .introduction p{width: 100%;}
+    .laptop-point {top: 75%;}
 }
 @media(max-width: 998px){
     .flex-div-one{left: 0; width: 100%; padding: 0 20px;}
@@ -192,15 +204,18 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
     .background-txt h1 {font-size: 100px;}
     .section-one-right img{position: relative; top: auto; left: auto; transform: translate(0,0);}
     .section-one-left {margin-top: 5vh;}
-    .common-section{height: auto; min-height: 50vh;}
+    .common-section{height: auto;}
     .flex-div{height: 100%; padding: 50px 0;}
     .lets-talk-div{position: relative;}
     .coronal-heading{margin-bottom: 25px;}
     .flex-div-one p{max-width: 100%;}
     .w-80{width: 100%;}
+    .common-section {margin: 50px 20px;}
+    .mobile-point {top: 63%;}
+    .laptop-point {top: 75%;}
 }
 @media(max-width: 767px){
-    .information{width: auto;padding: 0 20px; left: 0;}
+    .information{width: 100%;}
     .header-three {font-size: 25px;}
     .header-five {font-size: 27px;}
     .flex-div-one h3{max-width: 100%; padding: 0 10px;}
@@ -208,18 +223,24 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
     #menu ul li a {font-size: 40px;}
     .social-media {top: 50%; left: 30px; transform: translateY(-50%);}
     .social-media a img{width: 25px;}
-    .flex-div-one{padding: 0 10px;}
-    .common-section video{min-height: 100vh; height: 100%;}
+    .flex-div-one{padding: 0 0px;}
     #nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {width: 30px;height: 30px;position: fixed;margin: 15px auto;top: 0px; right: 15px;}
     .header-one {font-size: 20px;}
     .header-five, .lets-talk h2 {font-size: 30px;}
     .xtra-bigtext {font-size: 40px;}
-    .background-txt h1 {font-size: 50px;}
+    .background-txt h1 {font-size: 40px;}
     .section-one-right img{width: 100%;}
     .quotation-detals{width: 100%;}
     .quotation-icon img, .quotation-detals p span img{width: 20px;}
     .header-two {font-size: 25px;}
     .introduction p{width: 100%;}
+    .play-btn {padding: 7px 15px; font-size: 14px;}
+    .mobile-point,.laptop-point{width: 100px;}
+    .mobile-point img, .laptop-point img{width: 70px;}
+    .mobile-point p {left: 75%;bottom: -25px;font-size: 12px;}
+    .laptop-point p {left: -47%;bottom: -24px;font-size: 12px;}
+    .laptop-point {top: 70%; right:20%;}
+    .popup-video iframe {width: 80%;height: 70vh;margin: 10vh auto;}
 }
 
 

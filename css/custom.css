@@ -249,3 +249,7 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
   display: flex;
   justify-content: center !important;
 }
+
+video{
+  filter: grayscale(.5);
+}

@@ -13,7 +13,7 @@
 		}
 	</style>
 </head>
-<body onLoad="controlVideo('playVideo');">
+<body>
 <div class="blender"></div>
 	<div class="wrapper">
 	<!-- menu -->
@@ -59,6 +59,8 @@
 					</div>
 				</div>
 			</div>
+		</section>
+		<section class="common-section not-banner not-bg">
 			<div class="data-section w-100 ">
 			<div class="container">
 				<div class="flex-div wow fadeInUp" data-wow-duration="2s">
@@ -398,7 +400,7 @@
 			
 		</section>
 		<!-- Section one -->
-		<section class="common-section">
+		<section class="common-section mb-0">
 			<div class="container-fluid p-0 background-txt wow fadeInUp" data-wow-duration="4s">
 				<h1 class="Lufga">Sheliophysicist</h1>
 			</div>
@@ -437,6 +439,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
 
 <script>
+
+	window.onload = function() {
+	  controlVideo('playVideo');
+	};
+
 	$(document).ready(function(){
 		$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
 			$(this).toggleClass('open');

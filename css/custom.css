@@ -52,6 +52,7 @@ body{background: #000000;}
 .gray{color: rgba(255, 255, 255, 0.5);}
 .w-80{width: 100%;}
 .bg-img{background-position: center; background-size: cover; background-repeat: no-repeat;}
+.ninety-persent{width: 90%; margin: 0 auto;}
 /*body*/
 
 /* Icon 1 */
@@ -149,7 +150,7 @@ body{background: #000000;}
 .quotation-detals p{position: relative; padding-top: 20px; line-height: 1.2;}
 .quotation-detals p span img{position: absolute; bottom:-35px;}
 .introduction p{width: 500px; margin-top: 20px;}
-.common-section video{width: 90%; height: auto; }
+.common-section video{width: 90%; height: auto; padding: 3rem 0;}
 /*.not-banner h2{font-size: 200px; color: rgba(255,255,255,0.1); position: absolute; left: 50%; transform: translateX(-50%); text-align: center; top: 5vh; z-index: 1; width: 100%;}*/
 .information{position: absolute; bottom: 200px; width: 600px; line-height: 1.2;}
 .full-width{left: auto; right: auto; width: 80%;}

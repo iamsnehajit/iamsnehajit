@@ -49,7 +49,7 @@ body{background: #000000;}
 .flex-div-2{display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100vh; padding: 50px 0;}
 .line2{line-height: 1.2;}
 .red{color: #FF0000;}
-.flex-div-one{z-index:  2; position: relative; padding: 80px 0;}
+.flex-div-one{z-index:  2; position: relative; padding: 80px 20px;}
 .gray{color: rgba(255, 255, 255, 0.5);}
 .w-70{width: 70% !important;}
 .w-80{width: 100%;}
@@ -139,6 +139,7 @@ body{background: #000000;}
 #menu ul li a:hover:after{width: 100%}
 .social-media{position: absolute; top: 30%; left: 50px; z-index: 999; width: 50px;}
 .social-media a{display: block; margin-bottom: 15px;}
+.social-media a:hover{rotate: 360deg;}
 .common-section{position: relative; height: 100vh; overflow: hidden; padding: 1rem;}
 .common-section-2{height: auto; margin: 5rem 0;}
 /*.common-section:after{content: ''; position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1; background: rgba(0,0,0,0.5);}*/
@@ -189,19 +190,34 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
 /*  responsive  */
 @media(max-width: 1440px){
    .background-txt h1 {font-size: 165px;}
+   .information{padding-left: 70px; width: 670px;}
+   .flex-div-absolute{padding-left: 70px;}
+}
+@media(max-width: 1366px){
+   .information{padding-left: 50px; width: 650px;}
+   .flex-div-absolute{padding-left: 50px;}
+   .mobile-point {left: 17%;}
+   .header-two {font-size: 40px;}
 }
 @media(max-width: 1199px){
+    .quotation-div {position: relative;top: auto;left: auto;width: 100%;text-align: center;transform: translate(0%, 0%); height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column;}
     .flex-div-one h3{max-width: 100%;}
     .header-five, .lets-talk h2 {font-size: 50px;}
     .background-txt h1 {font-size: 90px;}
     .common-section {height: 100%; padding: 30px 0;}
     .information{position: relative; top: auto; left: auto; padding: 35px 0px 15px; max-width: 500px; bottom: auto;}
-    .common-section video {width: 100%;}
+    .common-section video {width: 100%; padding: 1rem 0;}
     section.not-bg {height: auto; padding: 30px 0;}
     .flex-div-absolute2,.flex-div-absolute{position: relative; top: auto; left: auto; padding: 35px 0px 15px; bottom: auto; transform: translate(0,0); width: 100%;} 
     .flex-div-absolute .mt-5 {margin-top: 0rem !important;}
     .introduction p{width: 100%;}
-    .laptop-point {top: 75%;}
+    .laptop-point {top: 57%;}
+    .flex-div-one {padding: 0;}
+    .common-section-2 {margin: 2rem 0;}
+    .ninety-persent {width: 100%;}
+    .header-two {font-size: 30px;}
+    .header-one {font-size: 25px;}
+    .quotation-detals {width: 351px;}
 }
 @media(max-width: 998px){
     .flex-div-one{left: 0; width: 100%; padding: 0 20px;}
@@ -215,9 +231,16 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
     .coronal-heading{margin-bottom: 25px;}
     .flex-div-one p{max-width: 100%;}
     .w-80{width: 100%;}
-    .common-section {margin: 50px 20px;}
+    .common-section {margin: 20px 0px;}
     .mobile-point {top: 63%;}
-    .laptop-point {top: 75%;}
+    .laptop-point {top: 55%; right: 20%;}
+    .social-media {top: 40%; left: 14%;}
+    .header-five, .lets-talk h2 {font-size: 45px;}
+    .section-one-right {height: 100%;}
+    .quotation-detals {width: 320px;}
+    .quotation-detals p span img{position: absolute; bottom:-35px; width: 40px;}
+    .quotation-icon img{width: 40px;}
+    
 }
 @media(max-width: 767px){
     .information{width: 100%;}
@@ -235,7 +258,7 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
     .xtra-bigtext {font-size: 40px;}
     .background-txt h1 {font-size: 40px;}
     .section-one-right img{width: 100%;}
-    .quotation-detals{width: 100%;}
+    .quotation-detals{width: 250px;}
     .quotation-icon img, .quotation-detals p span img{width: 20px;}
     .header-two {font-size: 25px;}
     .introduction p{width: 100%;}
@@ -246,6 +269,13 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
     .laptop-point p {left: -47%;bottom: -24px;font-size: 12px;}
     .laptop-point {top: 70%; right:20%;}
     .popup-video iframe {width: 80%;height: 70vh;margin: 10vh auto;}
+    .quotation {margin-top: 0px;}
+    .quotation-div {height: 100vh;}
+    .quotation-detals p span img {bottom: -20px;right: 0;}
+}
+
+@media(max-width: 350px){
+ .quotation-detals{width: 100%;}
 }
 
 

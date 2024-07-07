@@ -57,13 +57,16 @@ body{background: #000000;}
 .ninety-persent{width: 90%; margin: 0 auto;}
 /*body*/
 
+.navbar{position: fixed; top: 0; left: 0; width: 100%; height: auto; padding: 15px 50px; background: rgba(0, 0, 0, 0.5); z-index: 99999;}
+.brand{font-size: 30px; margin: 0;}
+.brand:hover{color: #fff;}
 /* Icon 1 */
 
 #nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
   width: 30px;
   height: 35px;
-  position: fixed;
-  margin: 20px auto;
+  position: relative;
+  margin: 0px 0 0 auto;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -73,8 +76,8 @@ body{background: #000000;}
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
-  z-index: 99999;
-  top: 0px; right: 25px;
+  z-index: 9999;
+  
 }
 
 #nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
@@ -97,15 +100,15 @@ body{background: #000000;}
 }
 
 #nav-icon1 span:nth-child(1) {
-  top: 0px;
+  top: 7px;
 }
 
 #nav-icon1 span:nth-child(2) {
-  top: 10px;
+  top: 17px;
 }
 
 #nav-icon1 span:nth-child(3) {
-  top: 20px;
+  top: 27px;
 }
 
 #nav-icon1.open span:nth-child(1) {
@@ -137,7 +140,7 @@ body{background: #000000;}
 #menu ul li a:hover{color: #fff;}
 #menu ul li a:after{content: ''; position: absolute; left: 0; bottom: 0; width: 0%; height: 2px; background: #fff; transition: 0.4s;}
 #menu ul li a:hover:after{width: 100%}
-.social-media{position: absolute; top: 30%; left: 50px; z-index: 999; width: 50px;}
+.social-media{position: absolute; top: 50%; left: 50px; z-index: 999; width: 50px;transform: translateY(-50%);}
 .social-media a{display: block; margin-bottom: 15px;}
 .social-media a:hover{rotate: 360deg;}
 .common-section{position: relative; height: 100vh; overflow: hidden; padding: 1rem;}
@@ -218,6 +221,7 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
     .header-two {font-size: 30px;}
     .header-one {font-size: 25px;}
     .quotation-detals {width: 351px;}
+    .navbar {padding: 15px 30px;}
 }
 @media(max-width: 998px){
     .flex-div-one{left: 0; width: 100%; padding: 0 20px;}
@@ -234,12 +238,13 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
     .common-section {margin: 20px 0px;}
     .mobile-point {top: 63%;}
     .laptop-point {top: 55%; right: 20%;}
-    .social-media {top: 40%; left: 14%;}
+    .social-media {top: 50%;left: 50px;transform: translateY(-50%);}
     .header-five, .lets-talk h2 {font-size: 45px;}
     .section-one-right {height: 100%;}
     .quotation-detals {width: 320px;}
     .quotation-detals p span img{position: absolute; bottom:-35px; width: 40px;}
     .quotation-icon img{width: 40px;}
+    .brand {font-size: 25px;}
     
 }
 @media(max-width: 767px){
@@ -272,6 +277,11 @@ section.not-bg{height: 100vh; display: flex; justify-content: center; flex-direc
     .quotation {margin-top: 0px;}
     .quotation-div {height: 100vh;}
     .quotation-detals p span img {bottom: -20px;right: 0;}
+    .brand {font-size: 20px;}
+    .navbar {padding: 10px 15px;}
+    #nav-icon1 span:nth-child(1) {top: 0px;}
+    #nav-icon1 span:nth-child(2) {top: 10px;}
+    #nav-icon1 span:nth-child(3) {top: 20px;}
 }
 
 @media(max-width: 350px){

@@ -19,7 +19,7 @@
 }
 
 @media(max-width:1199px) {
-
+    .navbar {padding: 15px 30px;}
 }
 
 @media(max-width:1024px) {
@@ -241,6 +241,7 @@ html.open-nav{
     overflow: hidden;
 }
 /* push nav end */
+ .brand {font-size: 25px;}
 
 
 
@@ -264,6 +265,11 @@ html.open-nav{
         clear: both;
         margin-bottom: 24px;
     }
+    .brand {font-size: 20px;}
+    .navbar {padding: 10px 15px;}
+    #nav-icon1 span:nth-child(1) {top: 0px;}
+    #nav-icon1 span:nth-child(2) {top: 10px;}
+    #nav-icon1 span:nth-child(3) {top: 20px;}
   
 }
 

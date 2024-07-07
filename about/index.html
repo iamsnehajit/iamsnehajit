@@ -34,10 +34,10 @@
     <link rel="stylesheet" href="about-responsive.css">
 </head>
 <body>
-    <header class="main-hea py-3">
+    <!-- <header class="main-hea py-3">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
-                  <a class="navbar-brand" href="./">Sheliophysicist</a>
+                  <a class="navbar-brand" href="/">Sheliophysicist</a>
                   <button class="navbar-toggler navbar-toggler-main" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="stick"></span>
                   </button>
@@ -53,8 +53,45 @@
               </nav>
         </div>
         <button class="navbar-toggler" id="navoverlay" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
-    </header>
+    </header> -->
+    <!-- menu -->
+    <header>
+    <nav class="navbar">
+        <div class="nav-section w-100">
+            <div class="">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="brand">
+                            <a class="helvetica white brand" href="/">Sheliophysicist</a>
+                        </div>
+                    </div>
+                    <div class="col-4 text-end">
+                        <div id="nav-icon1">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="menu">
+        <div class="social-media">
+            <a href="https://www.instagram.com/likag_helio/" target="_blank"><img src="../assets/images/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.facebook.com/madhulika.guhathakurta/" target="_blank"><img src="../assets/images/facebook.svg" alt="Facebook"></a>
+            <a href="https://www.linkedin.com/in/mguhathakurta/" target="_blank"><img src="../assets/images/linedin.svg" alt="Linedin"></a>
+        </div>
 
+        <!-- menu list -->
+        <ul>
+            <li><a href="/" class="helvetica white">Home</a></li>
+            <li><a href="/about/" class="helvetica white">About</a></li>
+        </ul>
+        
+    </section>
+    </header>
     <!-- Banner section  -->
     <!-- <section class="banner-sec"> -->
     <div class="container-fluid px-0 overflow-hidden hh">
@@ -195,7 +232,7 @@
     </div>
     <!-- </section> -->
     <!-- Jquery-->
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" ></script> -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script> 
@@ -222,6 +259,14 @@
     <!-- <script src="js/common.js"></script> -->
     <!-- <script src="js/gsap.js"></script> -->
     <!-- <script src="js/gsap-main.js"></script> -->
+    <script>
+        $(document).ready(function(){
+        $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+            $(this).toggleClass('open');
+            $('#menu').toggleClass('open');
+        });
+    });
+    </script>
 
 </body>
 

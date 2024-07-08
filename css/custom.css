@@ -306,6 +306,10 @@ video{
 }
 
 .grayscale-skyline {
-  background-image: url('/assets/images/skyline-dark.jpg');
+  background-image: url('/assets/images/skyline-s.jpg');
+}
+
+.coronal-mass-ejection {
+  background-image: url('/assets/images/flare-s.jpg');
 }
 

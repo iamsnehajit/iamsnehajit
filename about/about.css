@@ -819,7 +819,7 @@ html.lenis {
 }
 
 /* dev 2 */
-.navbar{position: fixed; top: 0; left: 0; width: 100%; height: auto; padding: 15px 50px; background: rgba(0, 0, 0, 0.5); z-index: 99999;}
+.navbar{position: fixed; top: 0; left: 0; width: 100%; height: auto; padding: 15px 50px; z-index: 99999;}
 .brand{font-size: 30px; margin: 0; color: #fff;}
 .brand:hover{color: #fff;}
 /* Icon 1 */

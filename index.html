@@ -1,697 +1,526 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>sheliophysics</title>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="css/custom.css">
-	<style>
-		section{
-			opacity: 0;
-		}
-	</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snehajit Khara — Full Stack Web Developer</title>
+<meta name="description" content="Portfolio of Snehajit Khara, Full Stack Web Developer with 6+ years building responsive sites and apps with React, Next.js, WordPress and Laravel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0d1117;
+    --surface: #12161d;
+    --surface-2: #1a2029;
+    --border: #262e3a;
+    --text: #e6edf3;
+    --text-muted: #8b98a5;
+    --amber: #f2a93b;
+    --teal: #3fd6c5;
+    --rose: #f2545b;
+    --radius: 10px;
+    --maxw: 1080px;
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Source Sans 3', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *, *::before, *::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+  h1,h2,h3{ font-family: var(--font-display); margin: 0; }
+  code, .mono{ font-family: var(--font-mono); }
+
+  .skip-link{
+    position: absolute; left: -9999px; top: 0; background: var(--amber); color: #12161d;
+    padding: 10px 16px; z-index: 1000; border-radius: 0 0 6px 0; font-weight: 600;
+  }
+  .skip-link:focus{ left: 0; }
+
+  :focus-visible{
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Nav / tab bar ---------- */
+  header.tabbar{
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,17,23,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .tabbar-inner{
+    max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; gap: 4px; height: 52px; overflow-x: auto;
+  }
+  .brand{
+    font-family: var(--font-mono); font-weight: 600; font-size: 14px;
+    color: var(--teal); margin-right: 14px; white-space: nowrap; text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .brand .dot{ width: 7px; height: 7px; border-radius: 50%; background: var(--amber); display: inline-block; }
+  nav.tabs{ display: flex; gap: 2px; flex: 1; }
+  nav.tabs a{
+    font-family: var(--font-mono); font-size: 13px; color: var(--text-muted);
+    text-decoration: none; padding: 15px 14px; border-bottom: 2px solid transparent;
+    white-space: nowrap; transition: color .15s ease, border-color .15s ease;
+  }
+  nav.tabs a:hover, nav.tabs a:focus-visible{ color: var(--text); }
+  nav.tabs a.active{ color: var(--text); border-bottom-color: var(--amber); }
+  nav.tabs a .ext{ color: var(--rose); }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding: 88px 0 64px; }
+  .hero-grid{ display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+  .eyebrow{
+    font-family: var(--font-mono); font-size: 13px; color: var(--amber);
+    letter-spacing: .04em; margin: 0 0 14px;
+  }
+  .hero h1{ font-size: clamp(2.1rem, 4vw, 3.1rem); font-weight: 800; line-height: 1.12; margin-bottom: 16px; }
+  .hero h1 span{ color: var(--teal); }
+  .hero p.lede{ color: var(--text-muted); font-size: 1.08rem; max-width: 46ch; margin-bottom: 30px; }
+
+  .btn-row{ display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn{
+    font-family: var(--font-mono); font-size: 13.5px; font-weight: 500;
+    padding: 12px 20px; border-radius: 8px; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px; transition: transform .15s ease, background .15s ease;
+    border: 1px solid transparent;
+  }
+  .btn-primary{ background: var(--teal); color: #06201c; }
+  .btn-primary:hover{ transform: translateY(-2px); }
+  .btn-ghost{ border-color: var(--border); color: var(--text); }
+  .btn-ghost:hover{ border-color: var(--teal); transform: translateY(-2px); }
+
+  /* code panel */
+  .code-panel{
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    overflow: hidden; box-shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
+  }
+  .code-panel .code-head{
+    display: flex; align-items: center; gap: 6px; padding: 10px 14px;
+    border-bottom: 1px solid var(--border); background: var(--surface-2);
+  }
+  .code-head .cdot{ width: 10px; height: 10px; border-radius: 50%; }
+  .code-head .cdot:nth-child(1){ background: #f2545b; }
+  .code-head .cdot:nth-child(2){ background: #f2a93b; }
+  .code-head .cdot:nth-child(3){ background: #3fd6c5; }
+  .code-head span.fname{ margin-left: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+  .code-body{ padding: 22px 20px; font-family: var(--font-mono); font-size: 13.5px; }
+  .code-body .ln{ color: #4a5568; user-select: none; display: inline-block; width: 18px; }
+  .tok-kw{ color: #ff7b9c; } .tok-key{ color: var(--teal); } .tok-str{ color: var(--amber); }
+  .tok-punc{ color: var(--text-muted); } .tok-arr{ color: #9ecbff; }
+  #typecursor{ display:inline-block; width:7px; height:14px; background:var(--teal); vertical-align:-2px; animation: blink 1s step-end infinite; }
+  @keyframes blink{ 50%{ opacity: 0; } }
+
+  section{ padding: 64px 0; border-top: 1px solid var(--border); }
+  .section-head{ display: flex; align-items: baseline; gap: 12px; margin-bottom: 34px; }
+  .section-head .idx{ font-family: var(--font-mono); color: var(--text-muted); font-size: 13px; }
+  .section-head h2{ font-size: 1.6rem; font-weight: 700; }
+  .section-head .file{ font-family: var(--font-mono); font-size: 13px; color: var(--rose); margin-left: auto; }
+
+  .reveal{ opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity: 1; transform: translateY(0); }
+
+  /* About */
+  .about-grid{ display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
+  .about-grid p{ color: var(--text-muted); }
+  .fact-list{ list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .fact-list li{ display: flex; justify-content: space-between; font-size: 14px; border-bottom: 1px dashed var(--border); padding-bottom: 10px; }
+  .fact-list .k{ color: var(--text-muted); font-family: var(--font-mono); font-size: 12.5px; }
+  .fact-list .v{ font-weight: 600; }
+
+  /* Skills */
+  .skill-groups{ display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+  .skill-card{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 18px 14px; }
+  .skill-card h3{ font-family: var(--font-mono); font-size: 13px; color: var(--amber); margin-bottom: 12px; font-weight: 600; }
+  .skill-card h3::before{ content: '"'; color: var(--text-muted); }
+  .skill-card h3::after{ content: '":'; color: var(--text-muted); }
+  .chip-row{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip{
+    font-family: var(--font-mono); font-size: 12.5px; background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; color: var(--text);
+  }
+
+  /* Experience / git log */
+  .commit{ position: relative; padding-left: 28px; margin-bottom: 34px; }
+  .commit::before{
+    content: ''; position: absolute; left: 6px; top: 6px; bottom: -34px; width: 1px; background: var(--border);
+  }
+  .commit:last-child::before{ display: none; }
+  .commit::after{
+    content: ''; position: absolute; left: 2px; top: 4px; width: 9px; height: 9px; border-radius: 50%;
+    background: var(--teal); box-shadow: 0 0 0 3px var(--bg);
+  }
+  .commit-head{ display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .commit-hash{ font-family: var(--font-mono); font-size: 12.5px; color: var(--amber); background: var(--surface-2); border: 1px solid var(--border); padding: 2px 8px; border-radius: 5px; }
+  .commit-msg{ font-weight: 700; font-family: var(--font-display); font-size: 1.02rem; }
+  .commit-date{ font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-left: auto; }
+  .commit-body{ color: var(--text-muted); margin: 8px 0 10px; padding-left: 2px; }
+  .commit-body li{ margin-bottom: 4px; }
+  .diffstat{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .diffstat span{ font-family: var(--font-mono); font-size: 12px; padding: 3px 9px; border-radius: 5px; background: var(--surface-2); border: 1px solid var(--border); color: var(--teal); }
+
+  /* Projects */
+  .project-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .project-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; display: flex; flex-direction: column; gap: 10px; transition: border-color .15s ease, transform .15s ease;
+  }
+  .project-card:hover{ border-color: var(--teal); transform: translateY(-3px); }
+  .project-idx{ font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+  .project-card h3{ font-size: 1.05rem; }
+  .project-card p{ color: var(--text-muted); font-size: 14px; margin: 0; flex: 1; }
+  .project-links{ display: flex; gap: 14px; font-family: var(--font-mono); font-size: 12.5px; }
+  .project-links a{ color: var(--teal); text-decoration: none; border-bottom: 1px dashed var(--teal); }
+  .project-links a:hover{ color: var(--amber); border-color: var(--amber); }
+  .placeholder-note{
+    margin-top: 26px; font-family: var(--font-mono); font-size: 12.5px; color: var(--text-muted);
+    border: 1px dashed var(--border); border-radius: 8px; padding: 12px 16px;
+  }
+  .placeholder-note strong{ color: var(--amber); }
+
+  /* Contact */
+  .terminal{
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+  }
+  .terminal .code-head{ }
+  .terminal-body{ padding: 24px; font-family: var(--font-mono); font-size: 14px; }
+  .terminal-body .prompt{ color: var(--teal); }
+  .terminal-body .out{ color: var(--text-muted); margin: 4px 0 16px 18px; }
+  .terminal-body a{ color: var(--amber); text-decoration: none; }
+  .terminal-body a:hover{ text-decoration: underline; }
+
+  footer{ padding: 30px 0 50px; text-align: center; color: var(--text-muted); font-family: var(--font-mono); font-size: 12.5px; }
+
+  @media (max-width: 860px){
+    .hero-grid, .about-grid{ grid-template-columns: 1fr; }
+    .hero{ padding-top: 56px; }
+    .section-head .file{ display: none; }
+  }
+</style>
 </head>
 <body>
-<div class="blender"></div>
-	<div class="wrapper">
-	<!-- menu -->
-	<header>
-	<nav class="navbar">
-		<div class="nav-section w-100">
-			<div class="">
-				<div class="row">
-					<div class="col-8">
-						<div class="brand">
-							<a class="helvetica white brand" href="/">Sheliophysicist</a>
-						</div>
-					</div>
-					<div class="col-4 text-end">
-						<div id="nav-icon1">
-						  <span></span>
-						  <span></span>
-						  <span></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
-	
-	<section id="menu">
-		<div class="social-media">
-			<a href="https://www.instagram.com/likag_helio/" target="_blank"><img src="assets/images/instagram.svg" alt="Instagram"></a>
-			<a href="https://www.facebook.com/madhulika.guhathakurta/" target="_blank"><img src="assets/images/facebook.svg" alt="Facebook"></a>
-			<a href="https://www.linkedin.com/in/mguhathakurta/" target="_blank"><img src="assets/images/linedin.svg" alt="Linedin"></a>
-		</div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-		<!-- menu list -->
-		<ul>
-			<li><a href="/" class="helvetica white">Home</a></li>
-			<li><a href="/about/" class="helvetica white">About</a></li>
-		</ul>
-		
-	</section>
-	</header>
-	<!-- youtube -->
-	<div class="popup-video" id="popup-video">
-		<div id="thevideo">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/6WTOkidJuxc?rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		</div>
-		<div class="pause-btn"><a href="javascript:void(0)" id="pause" onClick="controlVideo('pauseVideo');">&times</a></div>
-	</div>
-	<div class="play-video d-none" id="play-video"><a href="javascript:void(0)" id="play-video-btn" onClick="controlVideo('playVideo');" class="play-btn">Play Video</a></div>
-		<!-- <div><a href="javascript:void(0)" onClick="controlVideo('stopVideo');">Stop Video</a></div> -->
+<header class="tabbar">
+  <div class="tabbar-inner">
+    <a class="brand" href="#top"><span class="dot"></span>~/snehajit</a>
+    <nav class="tabs" aria-label="Section navigation">
+      <a href="#about" class="active">About<span class="ext">.tsx</span></a>
+      <a href="#skills">Skills<span class="ext">.json</span></a>
+      <a href="#experience">Experience<span class="ext">.log</span></a>
+      <a href="#projects">Projects<span class="ext">.jsx</span></a>
+      <a href="#contact">Contact<span class="ext">.sh</span></a>
+    </nav>
+  </div>
+</header>
 
-		<!-- top section -->
-		<section class="common-section not-banner not-bg quotation m-0 p-0">
-			<div class="quotation-div">
-				<div class="quotation">
-					<div class="quotation-detals position-relative">
-						<div class="quotation-icon">
-							<img src="assets/images/strat-icon.svg" alt="quotation">
-						</div>
-						<p class="helvetica white header-one lite">Radiant sun's dance <br/>Mysteries of space unfold <br/> Heliophysics grace. <span><img src="assets/images/end-icon.svg" alt="quotation"></span></p>
-					</div>
-				</div>
-			</div>
-		</section>				
+<main id="main">
 
-		<!-- Section two -->
-		<section class="common-section not-banner">
-			<div class="container-fluid p-0">
-				<video autoplay playsinline muted loop>
-					<source src="assets/videos/blue-dot.mp4" type="video/mp4">
-				</video>
-				<h2 class="Lufga d-none">The Basics</h2>
-			</div>
-			<div class="data-section">
-			<div class="container">
-				<div class="information wow fadeInLeft" data-wow-duration="2s">
-					<p class="helvetica white header-one">"The pale <span class="blue">blue</span> dot is my home." Earth, The only planet we know of that harbors life.</p>
-				</div>
-			</div>
-			</div>
-		</section>
+  <div id="top"></div>
+  <section class="hero wrap" style="border-top:none;">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">// full stack web developer</p>
+        <h1>Snehajit Khara builds sites that ship <span>fast, clean, and responsive.</span></h1>
+        <p class="lede">6+ years turning designs into working products — from custom WordPress themes and Laravel back ends to React, Next.js, and MERN-stack apps.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="mailto:snehajitk@gmail.com">Email me →</a>
+          <a class="btn btn-ghost" href="#projects">See the work</a>
+          <a class="btn btn-ghost" href="#contact">Contact.sh</a>
+        </div>
+      </div>
+      <div class="code-panel" aria-hidden="true">
+        <div class="code-head">
+          <span class="cdot"></span><span class="cdot"></span><span class="cdot"></span>
+          <span class="fname">developer.js</span>
+        </div>
+        <div class="code-body">
+<pre style="margin:0; white-space: pre-wrap;"><span class="tok-kw">const</span> developer = {
+  <span class="tok-key">name</span>: <span class="tok-str">"Snehajit Khara"</span>,
+  <span class="tok-key">role</span>: <span class="tok-str">"Full Stack Web Developer"</span>,
+  <span class="tok-key">experience</span>: <span class="tok-str">"6+ years"</span>,
+  <span class="tok-key">stack</span>: [<span id="typewrite"></span><span id="typecursor"></span>]
+};</pre>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<!-- Section three -->
-		<section class="common-section not-banner">
-			<div class="container-fluid p-0">
-				<video autoplay playsinline muted loop>
-					<source src="assets/videos/sun.mp4" type="video/mp4">
-					<!-- <source src="assets/videos/section-three.mp4" type="video/mp4"> -->
-				</video>
-				<h2 class="Lufga d-none">The Basics</h2>
-			</div>
-			<div class="data-section">
-			<div class="container">
-				<div class="information wow fadeInLeft" data-wow-duration="2s">
-					<p class="helvetica white header-one">The <span class="red">sun</span> gives us life. The closest star to us. But the one who gives us <span class="red">life</span> can take it <span class="red">away from us</span> in an instant. How?</p>
-				</div>
-			</div>
-			</div>
-		</section>
+  <section id="about" class="wrap reveal">
+    <div class="section-head">
+      <span class="idx">01</span>
+      <h2>About</h2>
+      <span class="file">About.tsx</span>
+    </div>
+    <div class="about-grid">
+      <p>
+        Snehajit is a frontend / full stack web developer with over six years of experience building
+        responsive websites and web applications. His work spans custom WordPress theme development,
+        Elementor builds, PHP and Laravel back ends, and modern React / Next.js front ends — often on the
+        same project, moving between stacks as the job requires. He's comfortable owning a build from a
+        design handoff through to a deployed, responsive product, and works closely with designers and
+        backend teams to get client projects across the line.
+      </p>
+      <ul class="fact-list">
+        <li><span class="k">location</span><span class="v">West Bengal, India</span></li>
+        <li><span class="k">experience</span><span class="v">6+ years</span></li>
+        <li><span class="k">education</span><span class="v">B.A., University of Calcutta</span></li>
+        <li><span class="k">certification</span><span class="v">NIELIT 'A' Level</span></li>
+        <li><span class="k">email</span><span class="v"><a href="mailto:snehajitk@gmail.com">snehajitk@gmail.com</a></span></li>
+        <li><span class="k">phone</span><span class="v"><a href="tel:+918013219579">+91 8013219579</a></span></li>
+      </ul>
+    </div>
+  </section>
 
-		<!-- Section four -->
-		<section class="common-section not-banner bg-img">
-			<div class="container-fluid p-0">
-				<video autoplay playsinline muted loop class="w-70">
-					<source src="assets/videos/Coronal.mp4" type="video/mp4">
-				</video>
-			</div>
-			
-			<div class="container">
-				<div class="flex-div-absolute2">
-				<div class="flex-div-one wow fadeInUp" data-wow-duration="2s">
-					<h3 class="Lufga white header-five coronal-heading">Coronal Mass Ejection</h3>
-					
-				</div>
-				</div>
-			</div>
-			
-		</section>
+  <section id="skills" class="wrap reveal">
+    <div class="section-head">
+      <span class="idx">02</span>
+      <h2>Skills</h2>
+      <span class="file">Skills.json</span>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-card">
+        <h3>languages</h3>
+        <div class="chip-row">
+          <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript (ES6+)</span>
+          <span class="chip">TypeScript</span><span class="chip">PHP</span><span class="chip">SCSS</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>frameworks</h3>
+        <div class="chip-row">
+          <span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">jQuery</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>cms &amp; backend</h3>
+        <div class="chip-row">
+          <span class="chip">WordPress</span><span class="chip">Laravel</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>styling</h3>
+        <div class="chip-row">
+          <span class="chip">Tailwind CSS</span><span class="chip">Bootstrap</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>databases</h3>
+        <div class="chip-row">
+          <span class="chip">MySQL</span><span class="chip">MongoDB</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>tools</h3>
+        <div class="chip-row">
+          <span class="chip">Git</span><span class="chip">GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<!-- coronal section two -->
-			<section class="common-section not-banner not-bg">
-			<div class="container-fluid p-0">
-				<!-- <video autoplay playsinline muted loop>
-					<source src="assets/videos/section-eight.mp4" type="video/mp4">
-				</video> -->
-				
-			</div>
-			<div class="container">
-				<div class="flex-div-one wow fadeInUp" data-wow-duration="2s">
-					<p class="helvetica white header-one line2">These are millions of tons of super-heated gas shooting off from the surface of the sun and hurtling 90 million miles toward Earth. When it hits Earth’s magnetic field, it triggers a geomagnetic storm which can cripple us! These storms are caused by 11-year Sun cycles that shift the polarity of the energy source's magnetic field.</p>
-					
-				</div>
-			</div>
-			
-		</section>
-		
+  <section id="experience" class="wrap reveal">
+    <div class="section-head">
+      <span class="idx">03</span>
+      <h2>Experience</h2>
+      <span class="file">Experience.log</span>
+    </div>
 
-		<!-- Section six -->
-		<section class="common-section not-banner">
-			<div class="container-fluid p-0">
-				<video autoplay playsinline muted loop>
-					<source src="assets/videos/section-six-31.mp4" type="video/mp4">
-				</video>
-				
-			</div>
-			<div class="container">
-				<div class="flex-div-absolute2">
-				<div class="flex-div-one wow fadeInUp" data-wow-duration="2s">
-					<h3 class="Lufga white header-five">You might <span class="red">think</span> this has nothing to do with you. Well…</h3>
-				</div>	
-				</div>
-			</div>
-			
-		</section>
-		<section class="common-section not-banner not-bg">
-			<div class="container-fluid p-0">
-				<!-- <video autoplay playsinline muted loop>
-					<source src="assets/videos/section-eight.mp4" type="video/mp4">
-				</video> -->
-				
-			</div>
-			<div class="container">
-				<div class="flex-div-absolute2">
-				<div class="flex-div-one wow fadeInUp" data-wow-duration="2s">
-					<h3 class="Lufga white header-five">Do you use or have any of the<span class="red d-block">following?</span></h3>
-				</div>
-				</div>
-			</div>
-			
-		</section>
-		<!-- Section seven -->
-		<section class="common-section not-banner">
-			<div class="container-fluid p-0">
-				<video autoplay playsinline muted loop>
-					<source src="assets/videos/section-seven.mp4" type="video/mp4">
-				</video>
-				<div class="mobile-point">
-					<img src="assets/images/mobile-point.svg" alt="icon"> 
-					<p class="white Lufga header-one">Mobile</p>
-				</div>
-				<div class="laptop-point">
-					<img src="assets/images/laptop-point.svg" alt="icon">
-					<p class="white Lufga header-one">Laptop</p>
-				</div>
-				
-			</div>
-			
-		</section>
+    <div class="commit">
+      <div class="commit-head">
+        <span class="commit-hash">a3f9c2d</span>
+        <span class="commit-msg">Full Stack Web Developer @ United Monks Technologies Pvt Ltd</span>
+        <span class="commit-date">Oct 2020 — Present</span>
+      </div>
+      <ul class="commit-body">
+        <li>Built responsive websites using HTML, CSS, JavaScript, PHP and SCSS.</li>
+        <li>Developed custom WordPress themes and Elementor-based websites.</li>
+        <li>Delivered projects on Laravel and the MERN stack.</li>
+        <li>Implemented responsive UI with Tailwind CSS and Bootstrap.</li>
+        <li>Collaborated closely with designers and backend developers on client work.</li>
+      </ul>
+      <div class="diffstat">
+        <span>WordPress</span><span>Laravel</span><span>MERN</span><span>Tailwind</span><span>Bootstrap</span>
+      </div>
+    </div>
 
+    <div class="commit">
+      <div class="commit-head">
+        <span class="commit-hash">7b1e4a0</span>
+        <span class="commit-msg">HTML Developer @ Newclick Media Solutions</span>
+        <span class="commit-date">Aug 2019 — Jan 2020</span>
+      </div>
+      <ul class="commit-body">
+        <li>Developed responsive web pages for client projects.</li>
+        <li>Assisted senior developers across the build process.</li>
+      </ul>
+      <div class="diffstat">
+        <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+      </div>
+    </div>
 
-		<!-- Section eight -->
-		<section class="common-section-2">
-			<div class="not-banner not-bg bg-img ninety-persent flex-div-2 grayscale-skyline">
-				<div class="container">
-					<div class="position-relative w-100 ">
-					<div class="flex-div-one wow fadeInUp" data-wow-duration="2s">
-						<h4 class="Lufga white header-one no-grayscale">Not only the living forces, even our <span class="red">technology</span> is very much dependent on the <span class="red">sun’s</span> whims. Hundreds of years ago, technology was too primitive to be disturbed by space weather. Today, we rely on countless devices that are vulnerable to a <span class="red">solar storm.</span> </h4>
-					</div>
-					</div>
-				</div>
-			</div>
-			
-		</section>
-		<!-- Section nine -->
-		<section class="common-section not-banner not-bg">
-			<div class="container-fluid p-0">
-				<!-- <video autoplay playsinline muted loop>
-					<source src="assets/videos/section-eight.mp4" type="video/mp4">
-				</video> -->
-				
-			</div>
-			<div class="container">
-				<div class="flex-div-one wow fadeInUp" data-wow-duration="2s">
-					<h4 class="Lufga white header-one">Think of all of the material you use that requires an <span class="red">electrical</span> current: <span class="red">computers</span>, <span class="red">televisions</span>, <span class="red">cellphones</span>, etc. Solar weather events have been occurring for millions of years, but they didn’t directly affect humans until recently.</h4>
-					<p class="Lufga white header-one mt-4"><span class="red">Voltage</span> fluctuations become quite common place during these times.</p>
-					
-				</div>
-			</div>
-			
-		</section>
+    <div class="commit">
+      <div class="commit-head">
+        <span class="commit-hash">4d8c119</span>
+        <span class="commit-msg">PHP Developer Intern @ Iniesta Webtech Solutions</span>
+        <span class="commit-date">Apr 2019 — Jun 2019</span>
+      </div>
+      <ul class="commit-body">
+        <li>Worked on PHP-based web application development as part of a team.</li>
+      </ul>
+      <div class="diffstat">
+        <span>PHP</span><span>MySQL</span>
+      </div>
+    </div>
+  </section>
 
-		<!-- Section ten -->
-		<section class="common-section not-banner">
-			<div class="container-fluid p-0">
-				<video autoplay playsinline muted loop>
-					<source src="assets/videos/section-ten.mp4" type="video/mp4">
-				</video>
-				
-			</div>
-			<div class="container">
-				<div class="flex-div-absolute mt-xl-5 wow fadeInLeft" data-wow-duration="2s">
-					<h3 class="Lufga white header-one line2 mt-5">You’ve experienced everyday <span class="red">space</span> weather if you have flown a <span class="red ">commercial airline</span></h3>
-				
-				</div>
-			</div>
-			
-		</section>
-		<!-- Section eleven -->
-		<section class="common-section not-banner not-bg">
-			<div class="data-section w-100 ">
-			<div class="container">
-				<div class="lets-talk">
-					<h2 class="header-five Lufga white">Let’s Talk about... </h2>
-				</div>
-				<div class="flex-div lets-talk-div wow fadeInUp" data-wow-duration="2s">
-					
-					<p class="Lufga white header-five text-center">An <span class="red">Extreme</span> Event: <span class="red">Carrington</span> 1859</p>
-					
-				</div>
-			</div>
-			</div>
-		</section>
+  <section id="projects" class="wrap reveal">
+    <div class="section-head">
+      <span class="idx">04</span>
+      <h2>Projects</h2>
+      <span class="file">Projects.jsx</span>
+    </div>
+    <div class="project-grid">
+      <div class="project-card">
+        <span class="project-idx">projects[0]</span>
+        <h3>Project name goes here</h3>
+        <p>One or two lines on what it does, who it's for, and the problem it solved. Swap this placeholder for a real project.</p>
+        <div class="chip-row"><span class="chip">Next.js</span><span class="chip">Tailwind</span></div>
+        <div class="project-links"><a href="#">GitHub →</a><a href="#">Live site →</a></div>
+      </div>
+      <div class="project-card">
+        <span class="project-idx">projects[1]</span>
+        <h3>Project name goes here</h3>
+        <p>One or two lines on what it does, who it's for, and the problem it solved. Swap this placeholder for a real project.</p>
+        <div class="chip-row"><span class="chip">Laravel</span><span class="chip">MySQL</span></div>
+        <div class="project-links"><a href="#">GitHub →</a><a href="#">Live site →</a></div>
+      </div>
+      <div class="project-card">
+        <span class="project-idx">projects[2]</span>
+        <h3>Project name goes here</h3>
+        <p>One or two lines on what it does, who it's for, and the problem it solved. Swap this placeholder for a real project.</p>
+        <div class="chip-row"><span class="chip">WordPress</span><span class="chip">Elementor</span></div>
+        <div class="project-links"><a href="#">GitHub →</a><a href="#">Live site →</a></div>
+      </div>
+      <div class="project-card">
+        <span class="project-idx">projects[3]</span>
+        <h3>Project name goes here</h3>
+        <p>One or two lines on what it does, who it's for, and the problem it solved. Swap this placeholder for a real project.</p>
+        <div class="chip-row"><span class="chip">React</span><span class="chip">MongoDB</span></div>
+        <div class="project-links"><a href="#">GitHub →</a><a href="#">Live site →</a></div>
+      </div>
+    </div>
+    <p class="placeholder-note"><strong>Note:</strong> these four cards are placeholders — send over your real project names, short descriptions, tech used, and GitHub/live links, and they'll drop straight in.</p>
+  </section>
 
-		<!-- Section twelve -->
-		<section class="common-section not-banner not-bg">
-			<div class="data-section w-100 ">
-			<div class="container">
-				<div class="flex-div wow fadeInUp " data-wow-duration="2s">
-					<h3 class="Lufga white header-one line2 text-center">In Sept. 1859, Earth was hit by a solar storm so powerful that it set telegraph offices on fire and sparked Northern Lights in the South Pacific. Historians call it the <span class="red">“Carrington Event”</span>  after English astronomer Richard Carrington who witnessed the instigating solar flare on a projecting screen with his unaided eyes. </h3>
-					<h3 class="Lufga white header-one line2 text-center mt-2">Many consider it to be the birthday of space weather.</h3>
-				</div>
-			</div>
-			</div>
-		</section>
-		<!-- Section thirteen -->
-		<section class="common-section not-banner not-bg">
-			<div class="not-banner not-bg bg-img ninety-persent flex-div-2 coronal-mass-ejection">
+  <section id="contact" class="wrap reveal">
+    <div class="section-head">
+      <span class="idx">05</span>
+      <h2>Contact</h2>
+      <span class="file">Contact.sh</span>
+    </div>
+    <div class="terminal">
+      <div class="code-head">
+        <span class="cdot"></span><span class="cdot"></span><span class="cdot"></span>
+        <span class="fname">contact.sh</span>
+      </div>
+      <div class="terminal-body">
+        <div><span class="prompt">$</span> cat contact.sh</div>
+        <div class="out">
+          email &nbsp;&nbsp;: <a href="mailto:snehajitk@gmail.com">snehajitk@gmail.com</a><br>
+          phone &nbsp;&nbsp;: <a href="tel:+918013219579">+91 8013219579</a><br>
+          based&nbsp;in : West Bengal, India
+        </div>
+        <div><span class="prompt">$</span> ./contact.sh --say-hello</div>
+        <div class="out">Ready when you are — drop a line and I'll get back to you.</div>
+      </div>
+    </div>
+  </section>
 
-				<div class="data-section w-100">
-					<div class="container">
-						<div class="flex-div wow fadeInUp" data-wow-duration="2s">
-							<h3 class="Lufga white header-five text-center line2">A <span class="red">Solar Superstorm</span> Narrowly Missed Earth in July <span class="red">2012</span></h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Section fourteen -->
-		<section class="common-section not-banner not-bg">
-			<div class="container">
-				<div class="flex-div-one pt-5 wow fadeInUp text-center" data-wow-duration="2s">
-					<h3 class="helvetica white header-one w-80 line2">"If this storm had hit Earth, we would still be picking up the pieces." <span class="d-block mt-3 red"> -Dan Baker, 2014 Space Weather Workshop</span></h3>
+</main>
 
-					<p class="helvetica white header-one mt-5 w-80 line2">"Had it hit Earth, it probably would have been like the big one in 1859. The effect today [on] our modern technologies would have been tremendous."<span class="d-block mt-3 red"> - Janet Luhmann, 2014 UC Berkeley press release.</span></p>
-					
-				</div>
-			</div>	
-		</section>
-		<!-- Section fifteen -->
-		<section class="common-section not-banner not-bg">
-			<div class="container-fluid p-0">
-				<!-- <video autoplay playsinline muted loop>
-					<source src="assets/videos/section-eight.mp4" type="video/mp4">
-				</video> -->
-				
-			</div>
-			<div class="container">
-				<div class="flex-div-absolute2">
-				<div class="flex-div-one wow fadeInUp" data-wow-duration="2s">
-					<h3 class="Lufga white header-five">The <span class="red">Main</span> Focus Of Modern Space Weather Forecasting Has Been <span class="blue">Earth</span></h3>
-				</div>
-				</div>
-			</div>
-			
-		</section>
-
-		<!-- Section seventeen -->
-		<section class="common-section not-banner">
-			<div class="container-fluid p-0">
-				<video autoplay playsinline muted loop>
-					<source src="assets/videos/section-sixteen.mp4" type="video/mp4">
-				</video>
-				<h2 class="Lufga d-none">The Basics</h2>
-			</div>
-			<div class="data-section">
-			<div class="container">
-				<div class="information wow fadeInLeft" data-wow-duration="2s">
-					<p class="helvetica white header-one">The <span class="red">auroras</span> are perhaps the most beautiful manifestations of space weather on <span class="blue">Earth</span></p>
-				</div>
-			</div>
-			</div>
-		</section>
-		<!-- Section eighteen -->
-		<section class="common-section not-banner not-bg">
-			<div class="data-section w-100 ">
-			<div class="container">
-				<div class="flex-div wow fadeInUp" data-wow-duration="2s">
-					<h3 class="header-five white header-four text-center line2">Hence, a brand <span class="red">new</span> branch of <span class="red">physics</span> appears!</h3>
-					
-					
-				</div>
-			</div>
-			</div>
-			
-		</section>
-		<!-- Section eighteen -->
-		<section class="common-section not-banner not-bg">
-			<div class="data-section w-100 ">
-			<div class="container">
-				<div class="flex-div wow fadeInUp text-center" data-wow-duration="2s">
-					
-					<p class="helvetica white header-one">I understood the importance of Space-Weather and collaborated with fellow physicists to form an entirely new branch of physics : <span class="d-block header-two">Heliophysics.</span></p>
-					
-				</div>
-			</div>
-			</div>
-			
-		</section>
-		<!-- Section nineteen -->
-		<section class="common-section not-banner not-bg">
-			<div class="data-section w-100 ">
-			<div class="container">
-				<div class="flex-div wow fadeInUp" data-wow-duration="2s">
-					<h3 class="helvetica white header-one text-center line2 mb-5">What is Heliophysics?</h3>
-					<p class="helvetica white header-one text-center mt-5">“Helio”-physics is the study of the physical domain defined by the Sun – the heliosphere, just like “astro”-physics is the study of the physical domain defined by stars.</p>
-					<p class="helvetica white header-one text-center mt-3">This physical domain includes the Sun itself, the solar system, and stretches out to the start of interstellar matter. In principle, Heliophysics studies everything inside the Sun’s domain of influence.</p>
-				</div>
-			</div>
-			</div>
-			
-		</section>
-		
-		<!-- Section twenty -->
-		<section class="common-section not-banner not-bg">
-			<div class="data-section w-100 ">
-			<div class="container">
-				<div class="flex-div wow fadeInUp" data-wow-duration="2s">
-					
-					<p class="helvetica white header-one text-center">So, now you know why I call <span class="red">myself</span>...</p>
-					<h3 class="Lufga white text-center xtra-bigtext">Sheliophysicist<span class="red">.</span></h3>
-					
-				</div>
-			</div>
-			</div>
-		</section>
-
-		<!-- Section twenty one -->
-		<section class="common-section not-banner not-bg bg-img py-5" style="background-image: url('./assets/images/silhouette3.jpg');height:120vh">
-			<div class="data-section w-100 ">
-			<div class="container">
-				<div class="flex-div wow fadeInUp" data-wow-duration="2s">
-					
-					<h3 class="helvetica white header-one text-center">Through life, from joining NASA Headquarters in 1998, one magnetic solar cycle ago, my entire journey has been fueled by my core love for the sun, taking me in pursuit of understanding space-weather and space climate and making everyone aware of the importance of Heliophysics. Today studying Heliophysics isn’t just a choice anymore, it’s a necessity.</h3>
-					
-					
-				</div>
-			</div>
-			</div>
-			
-		</section>
-		<!-- Section one -->
-		<section class="common-section mb-0">
-			<div class="container-fluid p-0 background-txt wow fadeInUp" data-wow-duration="4s">
-				<h1 class="Lufga">Sheliophysicist</h1>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 order-lg-1 order-md-2 order-sam-2 order-2">
-						<div class="section-one-left wow fadeInLeft" data-wow-duration="2s" data-wow-delay="1s">
-							<div class="introduction">
-								<label class="Lufga white header-one">Hello, it’s me</label>
-								<h2 class="Lufga white header-two">Dr. Madhulika Guhathakurta</h2>
-									
-					<p class="helvetica white header-one">I welcome you to explore <br/><span class="red">Sheliophysicist</span></p>
-								<!-- <p class="inter common-txt lite">Dr. Guhathakurta studies the Sun's effects on Earth (space weather) through NASA's "Living With a Star" program, a field called heliophysics. She leads missions like STEREO to understand solar eruptions and protects astronauts and technology from space weather.</p> -->
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 order-lg-2 order-md-1 order-sam-1 order-1">
-						<div class="section-one-right">
-							<img src="assets/images/Madhulika-Guhathakurta.png" alt="Madhulika Guhathakurta">
-						</div>
-					</div>
-					<small style="opacity: 1 !important;" hidden>Copyright@Sheliophysicist | All Rights Reserved | 2024</small>
-
-				</div>
-
-			</div>
-		
-
-
-		</section>
-
-
-	</div>
-
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+<footer>
+  © 2026 Snehajit Khara — built with HTML, CSS &amp; a little JS.
+</footer>
 
 <script>
+  // Typing animation for hero stack array
+  const stack = ["React", "Next.js", "Laravel", "WordPress", "Tailwind"];
+  const target = document.getElementById('typewrite');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-	window.onload = function() {
-	  controlVideo('playVideo');
-	};
+  function renderStackStatic(){
+    target.innerHTML = stack.map(s => `<span class="tok-str">"${s}"</span>`).join('<span class="tok-punc">, </span>');
+  }
 
-	$(document).ready(function(){
-		$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
-			$(this).toggleClass('open');
-			$('#menu').toggleClass('open');
-		});
+  if (reduceMotion) {
+    renderStackStatic();
+    const cursor = document.getElementById('typecursor');
+    if (cursor) cursor.style.display = 'none';
+  } else {
+    let i = 0, char = 0, buffer = '';
+    function tick(){
+      if (i >= stack.length){ return; }
+      const word = `"${stack[i]}"`;
+      if (char <= word.length){
+        buffer = stack.slice(0, i).map(s => `<span class="tok-str">"${s}"</span>`).join('<span class="tok-punc">, </span>');
+        if (i > 0) buffer += '<span class="tok-punc">, </span>';
+        buffer += `<span class="tok-str">${word.slice(0, char)}</span>`;
+        target.innerHTML = buffer;
+        char++;
+        setTimeout(tick, 45);
+      } else {
+        i++; char = 0;
+        setTimeout(tick, 160);
+      }
+    }
+    tick();
+  }
 
-		gsap.registerPlugin(ScrollTrigger)
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
 
-		var sections = gsap.utils.toArray('section');	
-		sections.forEach((section) => {
-			gsap.to(section, { 
-				// autoAlpha: 0,
-				opacity: 1,
-				scrollTrigger: {
-					trigger: section,
-					start: 'top-=200 top+=100',
-					scrub: true,
-					end: '+=700',
-					// markers: true
-				}
-			});
-		})
-
-	});
-
-
-	// youtube video
-	function controlVideo(vidcontrol) {
-    var div = document.getElementById("thevideo");
-    var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
-    iframe.postMessage('{"event":"command","func":"' + vidcontrol + '","args":""}', '*');
-    var videosection = document.getElementById("popup-video");
-   	videosection.classList.toggle("open");
-	}
-
-	window.onload = function () {
-		setTimeout(function () {
-			var playvideo = document.getElementById("play-video-btn");
-			var play = document.getElementById("play-video");
-			var videosectionn = document.getElementById("popup-video");
-			videosectionn.classList.toggle("open");
-			play.classList.toggle("d-none");
-		}, 3000); // Delay of 5 seconds
-	};
+  // Active tab highlight on scroll
+  const sections = ['about','skills','experience','projects','contact'].map(id => document.getElementById(id));
+  const tabLinks = document.querySelectorAll('nav.tabs a');
+  const sio = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  sections.forEach(s => s && sio.observe(s));
 </script>
 
-<!-- wow js -->
-<!-- <script>
-	(function() {
-  var Util,
-    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-
-  Util = (function() {
-    function Util() {}
-
-    Util.prototype.extend = function(custom, defaults) {
-      var key, value;
-      for (key in custom) {
-        value = custom[key];
-        if (value != null) {
-          defaults[key] = value;
-        }
-      }
-      return defaults;
-    };
-
-    Util.prototype.isMobile = function(agent) {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(agent);
-    };
-
-    return Util;
-
-  })();
-
-  this.WOW = (function() {
-    WOW.prototype.defaults = {
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 0,
-      mobile: true
-    };
-
-    function WOW(options) {
-      if (options == null) {
-        options = {};
-      }
-      this.scrollCallback = __bind(this.scrollCallback, this);
-      this.scrollHandler = __bind(this.scrollHandler, this);
-      this.start = __bind(this.start, this);
-      this.scrolled = true;
-      this.config = this.util().extend(options, this.defaults);
-    }
-
-    WOW.prototype.init = function() {
-      var _ref;
-      this.element = window.document.documentElement;
-      if ((_ref = document.readyState) === "interactive" || _ref === "complete") {
-        return this.start();
-      } else {
-        return document.addEventListener('DOMContentLoaded', this.start);
-      }
-    };
-
-    WOW.prototype.start = function() {
-      var box, _i, _len, _ref;
-      this.boxes = this.element.getElementsByClassName(this.config.boxClass);
-      if (this.boxes.length) {
-        if (this.disabled()) {
-          return this.resetStyle();
-        } else {
-          _ref = this.boxes;
-          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            box = _ref[_i];
-            this.applyStyle(box, true);
-          }
-          window.addEventListener('scroll', this.scrollHandler, false);
-          window.addEventListener('resize', this.scrollHandler, false);
-          return this.interval = setInterval(this.scrollCallback, 50);
-        }
-      }
-    };
-
-    WOW.prototype.stop = function() {
-      window.removeEventListener('scroll', this.scrollHandler, false);
-      window.removeEventListener('resize', this.scrollHandler, false);
-      if (this.interval != null) {
-        return clearInterval(this.interval);
-      }
-    };
-
-    WOW.prototype.show = function(box) {
-      this.applyStyle(box);
-      return box.className = "" + box.className + " " + this.config.animateClass;
-    };
-
-    WOW.prototype.applyStyle = function(box, hidden) {
-      var delay, duration, iteration;
-      duration = box.getAttribute('data-wow-duration');
-      delay = box.getAttribute('data-wow-delay');
-      iteration = box.getAttribute('data-wow-iteration');
-      return box.setAttribute('style', this.customStyle(hidden, duration, delay, iteration));
-    };
-
-    WOW.prototype.resetStyle = function() {
-      var box, _i, _len, _ref, _results;
-      _ref = this.boxes;
-      _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        box = _ref[_i];
-        _results.push(box.setAttribute('style', 'visibility: visible;'));
-      }
-      return _results;
-    };
-
-    WOW.prototype.customStyle = function(hidden, duration, delay, iteration) {
-      var style;
-      style = hidden ? "visibility: hidden; -webkit-animation-name: none; -moz-animation-name: none; animation-name: none;" : "visibility: visible;";
-      if (duration) {
-        style += "-webkit-animation-duration: " + duration + "; -moz-animation-duration: " + duration + "; animation-duration: " + duration + ";";
-      }
-      if (delay) {
-        style += "-webkit-animation-delay: " + delay + "; -moz-animation-delay: " + delay + "; animation-delay: " + delay + ";";
-      }
-      if (iteration) {
-        style += "-webkit-animation-iteration-count: " + iteration + "; -moz-animation-iteration-count: " + iteration + "; animation-iteration-count: " + iteration + ";";
-      }
-      return style;
-    };
-
-    WOW.prototype.scrollHandler = function() {
-      return this.scrolled = true;
-    };
-
-    WOW.prototype.scrollCallback = function() {
-      var box;
-      if (this.scrolled) {
-        this.scrolled = false;
-        this.boxes = (function() {
-          var _i, _len, _ref, _results;
-          _ref = this.boxes;
-          _results = [];
-          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            box = _ref[_i];
-            if (!(box)) {
-              continue;
-            }
-            if (this.isVisible(box)) {
-              this.show(box);
-              continue;
-            }
-            _results.push(box);
-          }
-          return _results;
-        }).call(this);
-        if (!this.boxes.length) {
-          return this.stop();
-        }
-      }
-    };
-
-    WOW.prototype.offsetTop = function(element) {
-      var top;
-      top = element.offsetTop;
-      while (element = element.offsetParent) {
-        top += element.offsetTop;
-      }
-      return top;
-    };
-
-    WOW.prototype.isVisible = function(box) {
-      var bottom, offset, top, viewBottom, viewTop;
-      offset = box.getAttribute('data-wow-offset') || this.config.offset;
-      viewTop = window.pageYOffset;
-      viewBottom = viewTop + this.element.clientHeight - offset;
-      top = this.offsetTop(box);
-      bottom = top + box.clientHeight;
-      return top <= viewBottom && bottom >= viewTop;
-    };
-
-    WOW.prototype.util = function() {
-      return this._util || (this._util = new Util());
-    };
-
-    WOW.prototype.disabled = function() {
-      return !this.config.mobile && this.util().isMobile(navigator.userAgent);
-    };
-
-    return WOW;
-
-  })();
-
-}).call(this);
-
-
-wow = new WOW(
-  {
-    animateClass: 'animated',
-    offset: 100
-  }
-);
-wow.init();
-
-</script> -->
+</body>
 </html>
